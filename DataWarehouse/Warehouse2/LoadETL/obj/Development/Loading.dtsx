@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/20/2025 1:04:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-SGCA8VTH"
+  DTS:CreatorName="LAPTOP-SGCA8VTH\szymo"
+  DTS:DTSID="{7A7ABEAB-A5B0-4A1A-9544-83EB1154F519}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{A78D30EF-7035-4DA1-853E-4A4084168385}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_load_Adjuster.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7EB31D28-E406-45A3-A871-1C084DE22451}"
+      DTS:ObjectName="ETL_load_Adjuster.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\szymo\Documents\SQL Server Management Studio\ETL_load_Adjuster.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_load_ClaimProcessing.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7AE2174E-C64D-4F6E-A42A-0E65CEEED9D6}"
+      DTS:ObjectName="ETL_load_ClaimProcessing.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\szymo\Documents\SQL Server Management Studio\ETL_load_ClaimProcessing.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_load_Customer.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{5811AE9E-BE1C-4FC7-A161-D16DE49A8A20}"
+      DTS:ObjectName="ETL_load_Customer.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\szymo\Documents\SQL Server Management Studio\ETL_load_Customer.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_load_InsuranceAgent.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7016C3E3-5420-4FBC-AAAE-779E8E658C3C}"
+      DTS:ObjectName="ETL_load_InsuranceAgent.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\szymo\Documents\SQL Server Management Studio\ETL_load_InsuranceAgent.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_load_Junk.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{40FF3253-8B80-4506-9D19-CC6DDD26D7F6}"
+      DTS:ObjectName="ETL_load_Junk.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\szymo\Documents\SQL Server Management Studio\ETL_load_Junk.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_load_Policy.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{DACD4153-450C-46F3-8730-56CC639D9277}"
+      DTS:ObjectName="ETL_load_Policy.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\szymo\Documents\SQL Server Management Studio\ETL_load_Policy.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-SGCA8VTH.insurance_warehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A981DC17-AD0F-4950-A846-A328BE7E8580}"
+      DTS:ObjectName="LAPTOP-SGCA8VTH.insurance_warehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-SGCA8VTH;Initial Catalog=insurance_warehouse;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{A981DC17-AD0F-4950-A846-A328BE7E8580}LAPTOP-SGCA8VTH.insurance_warehouse;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{27ECE61F-EFA3-4EAC-A90B-14C9CABFE0B6}"
+      DTS:ObjectName="localhost">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Warehouse2;Provider=MSOLAP.8;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Analysis Services Processing Task"
+      DTS:CreationName="Microsoft.DTSProcessingTask"
+      DTS:Description="Analysis Services Processing Task"
+      DTS:DTSID="{B7BEEBC3-070C-4A0B-B6B5-C563DC9C4137}"
+      DTS:ExecutableType="Microsoft.DTSProcessingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Analysis Services Processing Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ASProcessingData
+          ConnectionName="localhost"
+          ProcessingCommands="&lt;Batch xmlns=&quot;http://schemas.microsoft.com/analysisservices/2003/engine&quot;&gt;&#xA;  &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot; xmlns:ddl200=&quot;http://schemas.microsoft.com/analysisservices/2010/engine/200&quot; xmlns:ddl200_200=&quot;http://schemas.microsoft.com/analysisservices/2010/engine/200/200&quot; xmlns:ddl300=&quot;http://schemas.microsoft.com/analysisservices/2011/engine/300&quot; xmlns:ddl300_300=&quot;http://schemas.microsoft.com/analysisservices/2011/engine/300/300&quot; xmlns:ddl400=&quot;http://schemas.microsoft.com/analysisservices/2012/engine/400&quot; xmlns:ddl400_400=&quot;http://schemas.microsoft.com/analysisservices/2012/engine/400/400&quot; xmlns:ddl500=&quot;http://schemas.microsoft.com/analysisservices/2013/engine/500&quot; xmlns:ddl500_500=&quot;http://schemas.microsoft.com/analysisservices/2013/engine/500/500&quot;&gt;&#xA;    &lt;Object&gt;&#xA;      &lt;DatabaseID&gt;Warehouse2&lt;/DatabaseID&gt;&#xA;    &lt;/Object&gt;&#xA;    &lt;Type&gt;ProcessFull&lt;/Type&gt;&#xA;    &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;  &lt;/Process&gt;&#xA;&lt;/Batch&gt;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Adjuster"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8D56BE8E-05B5-468A-87B9-6CDD99B1C71D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Adjuster"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A981DC17-AD0F-4950-A846-A328BE7E8580}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_load_Adjuster.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load ClaimsProcessing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{40D01D2A-7395-4CF9-AD31-31465F1FCCBA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load ClaimsProcessing"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A981DC17-AD0F-4950-A846-A328BE7E8580}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_load_ClaimProcessing.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Customer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{84377E5D-E71E-4FF4-8566-1B4560435208}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Customer"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A981DC17-AD0F-4950-A846-A328BE7E8580}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_load_Customer.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load InsuranceAgent"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5B46E52D-12B0-4913-A6DC-4195F04487C3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load InsuranceAgent"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A981DC17-AD0F-4950-A846-A328BE7E8580}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_load_InsuranceAgent.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Junk"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C1907038-DE68-4855-A81C-D0DAB48991E7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Junk"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A981DC17-AD0F-4950-A846-A328BE7E8580}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_load_Junk.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Policy"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0018C707-14AE-4A00-BAF7-B4CE3A7E6297}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Policy"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A981DC17-AD0F-4950-A846-A328BE7E8580}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_load_Policy.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{B693F582-881B-48D3-9B74-0C8CD7B0CA84}"
+      DTS:From="Package\Load Junk"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load ClaimsProcessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{C987A505-BB2D-42AD-A1DB-C73022637A69}"
+      DTS:From="Package\Load Adjuster"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load ClaimsProcessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{0D9207F4-4DF9-4958-9C2E-3F5379CA4EC9}"
+      DTS:From="Package\Load Customer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load ClaimsProcessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D35276AC-3C9D-4E7A-9AE9-96395827B86F}"
+      DTS:From="Package\Load InsuranceAgent"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Load ClaimsProcessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{F3631FBB-8779-493B-BF62-AAD78050AACB}"
+      DTS:From="Package\Load Policy"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Load ClaimsProcessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{DC772A9A-125A-45EF-86CC-BD81B44B40FE}"
+      DTS:From="Package\Load ClaimsProcessing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Analysis Services Processing Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="237.333333333334,42.6666666666667"
+          Id="Package\Analysis Services Processing Task"
+          TopLeft="568.476165649793,430.785694006512" />
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package\Load Adjuster"
+          TopLeft="415.357124289232,81.1571389872689" />
+        <NodeLayout
+          Size="186.666666666667,42.6666666666667"
+          Id="Package\Load ClaimsProcessing"
+          TopLeft="594.642830560251,289.714271899633" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load Customer"
+          TopLeft="580.982116885218,82.45713892528" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load InsuranceAgent"
+          TopLeft="777.23210811216,76.4910677811931" />
+        <NodeLayout
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\Load Junk"
+          TopLeft="279.374987510965,78.3714248343878" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Load Policy"
+          TopLeft="962.499956972899,79.5089247801475" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="342.708320844298,121.038091501054">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="285.712287493731,168.676180398578"
+              Start="0,0"
+              End="285.712287493731,161.176180398578">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,119.853139453501" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,119.853139453501"
+                    Point2="0,123.853139453501"
+                    Point3="4,123.853139453501" />
+                  <mssgle:LineSegment
+                    End="281.712287493731,123.853139453501" />
+                  <mssgle:CubicBezierSegment
+                    Point1="281.712287493731,123.853139453501"
+                    Point2="285.712287493731,123.853139453501"
+                    Point3="285.712287493731,127.853139453501" />
+                  <mssgle:LineSegment
+                    End="285.712287493731,161.176180398578" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="487.357124289232,123.823805653936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170.841261826575,165.890466245697"
+              Start="0,0"
+              End="170.841261826575,158.390466245697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,94.6883793529642" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,94.6883793529642"
+                    Point2="0,98.6883793529642"
+                    Point3="4,98.6883793529642" />
+                  <mssgle:LineSegment
+                    End="166.841261826575,98.6883793529642" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166.841261826575,98.6883793529642"
+                    Point2="170.841261826575,98.6883793529642"
+                    Point3="170.841261826575,102.688379352964" />
+                  <mssgle:LineSegment
+                    End="170.841261826575,158.390466245697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="662.982116885218,125.123805591947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.9940470083667,164.590466307686"
+              Start="0,0"
+              End="24.9940470083667,157.090466307686">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.2952331538429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,78.2952331538429"
+                    Point2="0,82.2952331538429"
+                    Point3="4,82.2952331538429" />
+                  <mssgle:LineSegment
+                    End="20.9940470083667,82.2952331538429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.9940470083667,82.2952331538429"
+                    Point2="24.9940470083667,82.2952331538429"
+                    Point3="24.9940470083667,86.2952331538429" />
+                  <mssgle:LineSegment
+                    End="24.9940470083667,157.090466307686" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="859.23210811216,119.15773444786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-141.478166440798,170.556537451773"
+              Start="0,0"
+              End="-141.478166440798,163.056537451773">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,97.4642290789583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,97.4642290789583"
+                    Point2="0,101.464229078958"
+                    Point3="-4,101.464229078958" />
+                  <mssgle:LineSegment
+                    End="-137.478166440798,101.464229078958" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-137.478166440798,101.464229078958"
+                    Point2="-141.478166440798,101.464229078958"
+                    Point3="-141.478166440798,105.464229078958" />
+                  <mssgle:LineSegment
+                    End="-141.478166440798,163.056537451773" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1028.4999569729,122.175591446814">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-280.968237523759,167.538680452818"
+              Start="0,0"
+              End="-280.968237523759,160.038680452818">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,119.017912220601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,119.017912220601"
+                    Point2="0,123.017912220601"
+                    Point3="-4,123.017912220601" />
+                  <mssgle:LineSegment
+                    End="-276.968237523759,123.017912220601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-276.968237523759,123.017912220601"
+                    Point2="-280.968237523759,123.017912220601"
+                    Point3="-280.968237523759,127.017912220601" />
+                  <mssgle:LineSegment
+                    End="-280.968237523759,160.038680452818" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="687.559498105022,332.380938566299">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,98.4047554402126"
+              Start="0,0"
+              End="0,90.9047554402126">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.9047554402126" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[localhost]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
