@@ -1,0 +1,1 @@
+This project focuses on designing a data warehouse for an insurance company to support data analysis and decision-making. The project includes building an ETL process to collect data from different sources, clean and transform it, and store it in a structured format. Project also contains python data generator.
